@@ -1,6 +1,6 @@
 # Meow
 
-![Meow Logo](https://cdn2.thecatapi.com/images/GVR6HHxv-.jpg)
+#![Meow Logo](https://cdn2.thecatapi.com/images/GVR6HHxv-.jpg)
 
 ## Description
 
