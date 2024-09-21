@@ -89,6 +89,24 @@
 		#cat-fact:hover {
 			transform: scale(1.05); /* Slightly enlarge on hover */
 		}
+		
+		.notification {
+			position: fixed;
+			bottom: 20px;
+			left: 50%;
+			transform: translateX(-50%);
+			background-color: #333; /* Dark background */
+			color: white; /* White text */
+			padding: 10px 20px;
+			border-radius: 5px;
+			z-index: 1000;
+			transition: opacity 0.5s;
+			opacity: 0;
+		}
+
+		.notification.visible {
+			opacity: 1;
+		}
     </style>
 </head>
 
@@ -123,13 +141,15 @@
 
     <!-- Main Content Area -->
     <main class="container mx-auto mt-10 p-10 flex-grow content">
-        <div id="cat-fact" class="results-box">
+	
+        <div id="cat-fact" class="results-box" style="cursor: pointer;">
             <!-- Cat fact will be inserted here -->
         </div>
 
-        <div id="cat-image" class="mt-4 results-box">
+        <div id="cat-image" class="mt-4 results-box" style="cursor: pointer;">
             <!-- Cat image will be inserted here -->
         </div>
+		<div id="notification" class="notification"></div>
     </main>
 
     <!-- Footer Section -->
@@ -163,7 +183,7 @@
     imgElement.src = catImageUrl;
     imgElement.alt = "Random Cat";
     catImageContainer.appendChild(imgElement);
-}
+    }
 
 
         // Function to fetch and display the cat fact
@@ -187,6 +207,39 @@
 			getCatImage();
 			getCatFact();
 		});
+		
+				// Function to copy text to clipboard
+		function copyToClipboard(text) {
+			navigator.clipboard.writeText(text).then(() => {
+				  showNotification('Copied to clipboard: ' + text);
+			}).catch(err => {
+				
+			});
+		}
+
+		// Add event listeners for the cat fact and image
+		document.getElementById('cat-fact').addEventListener('click', () => {
+			const catFact = document.getElementById('cat-fact').textContent;
+			copyToClipboard(catFact);
+		});
+
+		document.getElementById('cat-image').addEventListener('click', () => {
+			const imgElement = document.getElementById('cat-image').querySelector('img');
+			if (imgElement) {
+				copyToClipboard(imgElement.src);
+			}
+		});
+		function showNotification(message) {
+			const notification = document.getElementById('notification');
+			notification.textContent = message;
+			notification.classList.add('visible');
+
+			// Hide the notification after 2 seconds
+			setTimeout(() => {
+				notification.classList.remove('visible');
+			}, 2000);
+		}
+
     </script>
 </body>
 </html>
