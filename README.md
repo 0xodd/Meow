@@ -1,6 +1,6 @@
 # Meow
 
-![Meow Logo](link-to-your-logo)
+![Meow Logo]([link-to-your-logo](https://api.thecatapi.com/v1/images/search))
 
 ## Description
 
