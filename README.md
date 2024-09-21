@@ -9,8 +9,6 @@
 ## Table of Contents
 
 - [Features](#features)
-- [Installation](#installation)
-- [Usage](#usage)
 - [Contributing](#contributing)
 - [License](#license)
 - [Acknowledgments](#acknowledgments)
@@ -21,38 +19,6 @@
 - **Cat Facts**: Provides fun and interesting facts about cats with each image.
 - **User-Friendly Interface**: Simple and intuitive design for easy navigation.
 
-## Installation
-
-To install Meow, follow these steps:
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/0xodd/Meow.git
-   ```
-
-2. Navigate to the project directory:
-   ```bash
-   cd Meow
-   ```
-
-3. Install the necessary dependencies:
-   ```bash
-   npm install
-   ```
-
-## Usage
-
-To use Meow, follow these steps:
-
-1. Start the application:
-   ```bash
-   npm start
-   ```
-2. Open your web browser and navigate to `http://localhost:3000` (or the relevant URL).
-
-### Example
-
-Upon launching the app, you will see a random cat image along with a fascinating fact. Refresh the page to see a new image and fact!
 
 ## Contributing
 
